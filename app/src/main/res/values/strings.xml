@@ -118,4 +118,12 @@
     <string name="enter_valid_phone_number">To\'g\'ri raqam kiriting</string>
     <string name="similar_items">O\'xshash elonlar</string>
     <string name="men_o_qituvchiman">Men O\'qituvchiman</string>
+    <string name="select_subject">Fanni Tanlang*</string>
+
+
+    <string-array name="my_string_array">
+        <item>one</item>
+        <item>two</item>
+        <item>three</item>
+    </string-array>
 </resources>

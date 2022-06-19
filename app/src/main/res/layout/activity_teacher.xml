@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
     android:orientation="vertical"
     tools:context=".ui.teacher.TeacherActivity">
 
@@ -39,11 +40,26 @@
             android:textSize="@dimen/dimen_20sp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.google.android.material.card.MaterialCardView
+
+    <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/dimen_56dp"
+        android:layout_marginHorizontal="@dimen/dimen_16dp"
+        android:id="@+id/title"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:background="@drawable/background_8dp_blue"
+        android:hint="@string/add_title"
+        android:padding="@dimen/dimen_10dp"
+        android:textSize="@dimen/dimen_16sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_margin="6dp"
+
+        android:background="@drawable/background_8dp_blue"
+        android:layout_marginHorizontal="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_12dp"
         app:cardCornerRadius="12dp">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -52,38 +68,63 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/ic_cloud_upload" />
-    </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/description"
+        android:maxLength="1000"
+        android:layout_marginHorizontal="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_12dp"
+        android:background="@drawable/background_8dp_blue"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="top"
+        android:hint="@string/description_"
+        android:padding="@dimen/dimen_10dp"
+        android:textSize="@dimen/dimen_16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/dimen_10dp"
-        app:cardCornerRadius="@dimen/dimen_10dp">
+        android:fontFamily="@font/inter_regular"
+        android:layout_marginHorizontal="@dimen/dimen_16dp"
+        android:text="@string/select_subject"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_16sp" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_56dp"
-            android:padding="@dimen/dimen_10dp"
-            android:background="@android:color/transparent"
-            android:hint="@string/add_title"
-            android:textSize="@dimen/dimen_16sp" />
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_height="@dimen/dimen_56dp"
+        android:id="@+id/selectSubject"
+        android:layout_marginHorizontal="@dimen/dimen_16dp"
+        android:background="@drawable/background_8dp_blue"
+        android:fontFamily="@font/inter_regular"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:gravity="center_vertical"
+        android:text="@string/select_subject"
+        android:paddingHorizontal="@dimen/dimen_16dp"
+        android:textSize="@dimen/dimen_16sp" />
+
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_0dp"
+        android:layout_weight="1"/>
+
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/dimen_10dp"
-        app:cardCornerRadius="@dimen/dimen_10dp">
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:gravity="top"
-            android:padding="@dimen/dimen_10dp"
-            android:background="@android:color/transparent"
-            android:hint="@string/description_"
-            android:textSize="@dimen/dimen_16sp" />
-
-    </com.google.android.material.card.MaterialCardView>
+        android:layout_marginHorizontal="@dimen/dimen_16dp"
+        android:text="@string/send"
+        style="@style/MaterialButtonCustomStyle"
+        android:layout_marginBottom="@dimen/dimen_24dp"
+        android:id="@+id/send"/>
 
 
-</LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
