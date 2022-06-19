@@ -80,7 +80,6 @@
             android:gravity="top"
             android:padding="@dimen/dimen_10dp"
             android:background="@android:color/transparent"
-            android:fontFamily="@font/inter_semibold"
             android:hint="@string/description_"
             android:textSize="@dimen/dimen_16sp" />
 
