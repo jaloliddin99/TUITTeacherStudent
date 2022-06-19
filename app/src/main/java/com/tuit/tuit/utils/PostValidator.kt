@@ -8,51 +8,29 @@ import com.tuit.tuit.R
 object PostValidator {
 
     fun validatePost(
-        titleProduct: String,
-        descriptionProduct: String,
-        priceText: String,
-        region: Int,
-        isPost: Boolean,
-        categoryId: Int?,
-        context: Context,
-        imagesUrlList:List<Uri>
-    ): Boolean{
-        if (titleProduct.length < 4) {
-            Toast.makeText(
-                context,
-                context.getString(R.string.errorTitle),
-                Toast.LENGTH_SHORT
-            ).show()
+        title: String,
+        description: String,
+        subjectName: String,
+        fileUri: Uri?,
+        context: Context
+    ): Boolean {
+        if (title.length < 5) {
+            Toast.makeText(context, "Sarlavha kiriting", Toast.LENGTH_SHORT).show()
             return false
         }
+        if (description.length < 20) {
+            Toast.makeText(context, "To'liqroq tavsif kiriting", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if (subjectName.isEmpty()) {
+            Toast.makeText(context, "Fanni tanlang", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if (fileUri == null) {
+            Toast.makeText(context, "Fayl qo'shing", Toast.LENGTH_SHORT).show()
+            return false
 
-        if (categoryId == 0){
-            Toast.makeText(context, context.getString(R.string.select_category), Toast.LENGTH_SHORT).show()
-            return false
         }
-        if (region == 0){
-            Toast.makeText(context, context.getString(R.string.selectRegion), Toast.LENGTH_SHORT).show()
-            return false
-        }
-
-        if (priceText.trim().isEmpty()) {
-            Toast.makeText(context, context.getString(R.string.enter_amount), Toast.LENGTH_SHORT).show()
-            return false
-        }
-
-        if (isPost) {
-            if (imagesUrlList.isEmpty())
-                return false
-        }
-        if (descriptionProduct.length < 9) {
-            Toast.makeText(
-                context,
-                context.getString(R.string.description),
-                Toast.LENGTH_SHORT
-            ).show()
-            return false
-        }
-
         return true
     }
 
@@ -62,7 +40,7 @@ object PostValidator {
         textEmail: String,
         textPassword: String,
         textReEnteredPassword: String,
-    ): Boolean{
+    ): Boolean {
         if (textName.isEmpty()) {
             Toast.makeText(context, context.getString(R.string.enterName), Toast.LENGTH_SHORT)
                 .show()
@@ -92,7 +70,7 @@ object PostValidator {
             ).show()
             return false
         }
-        if (textPassword.length<6){
+        if (textPassword.length < 6) {
             Toast.makeText(
                 context,
                 context.getString(R.string.passwordMustBeMoreThan6Char),

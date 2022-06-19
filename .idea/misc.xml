@@ -12,24 +12,25 @@
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable-v24/background_corner_8dp_dark_blue.xml" value="0.2285" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable-v24/ic_back_icon.xml" value="0.2285" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2285" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable/background_8dp_grey.xml" value="0.2285" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable/background_top_16_white.xml" value="0.2285" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable/ic_arrow_right.xml" value="0.2285" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2285" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable/ic_divider_text.xml" value="0.2285" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2285" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2285" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable/ic_line.xml" value="0.2285" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2285" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/activity_login.xml" value="0.3359375" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/activity_main.xml" value="0.3359375" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/activity_teacher.xml" value="0.3359375" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/dialog_select_subject.xml" value="0.33" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/fragment_dashboard.xml" value="0.3359375" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/fragment_home.xml" value="0.3359375" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/fragment_notifications.xml" value="0.3359375" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/fragment_sign_in.xml" value="0.3359375" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/fragment_sign_up.xml" value="0.3359375" />
-        <entry key="..\:/android_advanced_kotlin/Diplom ishi/app/src/main/res/drawable/ic_cloud_upload.xml" value="0.1" />
-        <entry key="..\:/android_advanced_kotlin/Diplom ishi/app/src/main/res/drawable/ic_divider_text.xml" value="0.1" />
-        <entry key="..\:/android_advanced_kotlin/Diplom ishi/app/src/main/res/layout/activity_login.xml" value="0.13240740740740742" />
-        <entry key="..\:/android_advanced_kotlin/Diplom ishi/app/src/main/res/layout/activity_teacher.xml" value="0.25" />
-        <entry key="..\:/android_advanced_kotlin/Diplom ishi/app/src/main/res/layout/fragment_sign_up.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/TUITTeacherStudent/app/src/main/res/layout/layout_subject.xml" value="0.3359375" />
       </map>
     </option>
   </component>
