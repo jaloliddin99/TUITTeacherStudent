@@ -119,11 +119,53 @@
     <string name="similar_items">O\'xshash elonlar</string>
     <string name="men_o_qituvchiman">Men O\'qituvchiman</string>
     <string name="select_subject">Fanni Tanlang*</string>
-
+    <string name="faqs">FAQs</string>
+    <string name="about_us">About Us</string>
+    <string name="logout">Logout</string>
 
     <string-array name="my_string_array">
-        <item>one</item>
-        <item>two</item>
-        <item>three</item>
+        <item>Optik aloqa tizimlari</item>
+        <item>Multimedia aloqa tarmoqlari</item>
+        <item>Telekommunikatsiyada dasturlash strukturasi</item>
+        <item>Virtual tarmoq texnologiyasi</item>
+        <item>IMS ga kirish (B)</item>
+        <item>Ma`lumotlar uzatish asoslari</item>
+        <item>Telekommunikatsiya tarmoqlarini boshqarish asoslari</item>
+        <item>Infokomunikatsiya tizimlarining elektr ta`minoti</item>
+        <item>Tarmoq havfsizligi</item>
+        <item>Simsiz tarmoq</item>
+        <item>O`rnatilgan tizimlar</item>
+        <item>Operatsion tizimlar</item>
+        <item>Ekologiya</item>
+        <item>Raqamli qurilmalarni loyixalashga kirish</item>
+        <item>Kompyuter arxitekturasi</item>
+        <item>Tizimlar va signallarni qayta ishlash</item>
+        <item>Kompyuter tarmoqlari</item>
+        <item>Ingliz tili 4</item>
+        <item>Hayot faoliyati xavfsizligi</item>
+        <item>Elektronika va sxemalar 2</item>
+        <item>Algoritmlarni loyihalash</item>
+        <item>Veb dasturlashga kirish</item>
+        <item>Komyuterni tashkillashtirish</item>
+        <item>Zamonaviy iqtisodiyot</item>
+        <item>Ingliz tili 3</item>
+        <item>Elektronika va sxemalar 1</item>
+        <item>Ma`lumotlar tuzilmasi va algoritmlar</item>
+        <item>Kiberxavfsizlik asoslari</item>
+        <item>Ma`lumotlar bazasi</item>
+        <item>Fizika 2</item>
+        <item>O`zbek/Rus tili 2</item>
+        <item>Ingliz tili 2</item>
+        <item>Matematika 2</item>
+        <item>Sonli usullar va chiziqli dasturlash</item>
+        <item>C++ 2</item>
+        <item>Mutaxassislikka kirish (Telekommunikatsiya)</item>
+        <item>O`zbek/Rus tili 1</item>
+        <item>Fizika 1</item>
+        <item>Ingliz tili 1</item>
+        <item>Jismoniy madaniyat 1</item>
+        <item>Dinshunoslik</item>
+        <item>Matematika 1</item>
+        <item>C++ 1</item>
     </string-array>
 </resources>
