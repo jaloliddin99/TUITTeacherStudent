@@ -72,5 +72,9 @@
         <item name="tint">@color/white</item>
     </style>
 
+    <style name="circle">
+        <item name="cornerSize">50%</item>
+    </style>
+
 
 </resources>

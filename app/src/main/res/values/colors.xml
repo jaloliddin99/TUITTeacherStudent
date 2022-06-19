@@ -24,4 +24,17 @@
     <color name="reply_black_900_alpha_020">#33000000</color>
     <color name="reply_white_50_alpha_060">#990D6EFD</color>
     <color name="reply_blue_50_alpha_060">#E60D6EFD</color>
+
+
+
+    //Text
+    <color name="text_100">#DFDEE4</color>
+    <color name="text_200">#C6C5CD</color>
+    <color name="text_300">#ABAAB1</color>
+    <color name="text_400">#89888E</color>
+    <color name="text_500">#5E5D65</color>
+    <color name="text_600">#454354</color>
+    <color name="text_700">#302E43</color>
+    <color name="text_800">#252339</color>
+    <color name="text_900">#191632</color>
 </resources>
