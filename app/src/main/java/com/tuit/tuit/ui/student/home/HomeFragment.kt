@@ -4,39 +4,62 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.tuit.tuit.R
 import com.tuit.tuit.databinding.FragmentHomeBinding
+import com.tuit.tuit.repository.model.Data
+import com.tuit.tuit.ui.student.adapter.FileAdapter
 
-class HomeFragment : Fragment() {
-
+class HomeFragment : Fragment(), FileAdapter.OnClickListener {
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
+    val list = ArrayList<Data>()
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.apply {
+            recyclerView.adapter = FileAdapter(recyclerFiletList(), this@HomeFragment)
+            recycler.adapter = FileAdapter(recyclerFiletList(), this@HomeFragment)
+        }
+    }
+
+
+    private fun recyclerFiletList(): ArrayList<Data> {
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        list.add(Data("sebfhsbf", "Optik tarmoq", "asjndjksdbfjksdbvjkbxfjkvkfjxfb"))
+        return list
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemClicked() {
+        findNavController().navigate(R.id.action_navigation_home_to_openFileFragment)
     }
 }

@@ -1,4 +1,4 @@
-package com.tuit.tuit.ui.student.notifications
+package com.tuit.tuit.ui.student.profile
 
 import android.app.Activity
 import android.os.Bundle
@@ -12,23 +12,20 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.github.dhaval2404.imagepicker.ImagePicker
-import com.tuit.tuit.databinding.FragmentNotificationsBinding
+import com.tuit.tuit.databinding.FragmentProfileBinding
+import com.tuit.tuit.utils.SharedPreferences
 
-class NotificationsFragment : Fragment() {
-    private var _binding: FragmentNotificationsBinding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+class ProfileFragment : Fragment() {
+    private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        val notificationsViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.fullname
@@ -42,7 +39,6 @@ class NotificationsFragment : Fragment() {
         }
         return root
     }
-
 
 
     private fun pickImageProfile() {
@@ -60,6 +56,7 @@ class NotificationsFragment : Fragment() {
                 startForProfileImageResult.launch(intent)
             }
     }
+
     private val startForProfileImageResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             val resultCode = result.resultCode
@@ -68,6 +65,11 @@ class NotificationsFragment : Fragment() {
                 Activity.RESULT_OK -> {
                     //Image Uri will not be null for RESULT_OK
                     val fileUri = data?.data!!
+
+                    val sharedPreferences = SharedPreferences
+                    sharedPreferences.getProfileImage(requireContext(), fileUri)
+
+
                     binding.ivImage.setImageURI(fileUri)
                 }
                 ImagePicker.RESULT_ERROR -> {

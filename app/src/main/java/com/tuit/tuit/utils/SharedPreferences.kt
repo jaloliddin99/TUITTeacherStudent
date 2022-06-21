@@ -2,6 +2,7 @@ package com.tuit.tuit.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.Uri
 
 object SharedPreferences {
 
@@ -62,6 +63,11 @@ object SharedPreferences {
     fun getPhone(context: Context): String? {
         val sharedPreferences = context.getSharedPreferences("Elon", Context.MODE_PRIVATE)
         return sharedPreferences.getString("phone_number", "")
+    }
+
+    fun getProfileImage(context: Context, fileUri:Uri):String?{
+        val sharedPreferences = context.getSharedPreferences("Image", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("fileUrl", fileUri.toString())
     }
 
 }

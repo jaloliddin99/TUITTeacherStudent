@@ -22,7 +22,7 @@ object AppModule {
         @ApplicationContext context: Context
     ): ApiInterface {
         return Retrofit.Builder()
-            .baseUrl("https://arendo.uz/")
+            .baseUrl("https://testone.uz/jaloliddin1199/tuitDiplomaWork/")
             //.client(builder.build())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

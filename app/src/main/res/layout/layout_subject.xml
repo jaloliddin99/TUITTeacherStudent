@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:fontFamily="@font/inter_medium"
         android:textSize="@dimen/dimen_16dp"
-        android:text="dwadwadwadawd"
+        android:text="Optik aloqa"
         android:textColor="@color/black"/>
 
     <FrameLayout

@@ -122,6 +122,18 @@
     <string name="faqs">FAQs</string>
     <string name="about_us">About Us</string>
     <string name="logout">Logout</string>
+    <string name="quiz">Quiz</string>
+    <string name="replay">Qayta O\'ynash</string>
+    <string name="review">Tekshirish</string>
+    <string name="share">Ulashish</string>
+    <string name="compare">Taqqoslash</string>
+    <string name="home">Bosh Sahifa</string>
+    <string name="enter_your_name">Ismingiz</string>
+    <string name="upload">Yuklash</string>
+    <string name="correct_answer">To\'g\'ri Javob</string>
+    <string name="continuee">Davom etish</string>
+    <string name="you_havent">Siz hali imtihon topshirmagansiz</string>
+    <string name="exam_results">Imtohon Natijalari</string>
 
     <string-array name="my_string_array">
         <item>Optik aloqa tizimlari</item>
@@ -168,4 +180,8 @@
         <item>Matematika 1</item>
         <item>C++ 1</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="result">Natijangiz</string>
+    <string name="finish">Yakunlash</string>
 </resources>

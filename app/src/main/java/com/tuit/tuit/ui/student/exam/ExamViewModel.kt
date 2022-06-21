@@ -1,11 +1,10 @@
-package com.tuit.tuit.ui.student.dashboard
+package com.tuit.tuit.ui.student.exam
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
-
+class ExamViewModel:ViewModel() {
     private val _text = MutableLiveData<String>().apply {
         value = "This is dashboard Fragment"
     }
