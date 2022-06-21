@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -22,18 +21,15 @@ import com.tuit.tuit.ui.student.adapter.FileAdapter
 class HomeFragment : Fragment(), FileAdapter.OnClickListener {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private var user:Data? = null
     lateinit var databaseReference: DatabaseReference
-    val list = ArrayList<Data>()
+    private val list = ArrayList<Data>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,28 +40,25 @@ class HomeFragment : Fragment(), FileAdapter.OnClickListener {
 
         }
 
-
-        databaseReference = Firebase.database.reference
-
+        databaseReference = Firebase.database.reference.child("subjects").child("Tarmoq_havfsizligi")
 
 
-        val listener = databaseReference
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val data = snapshot!!.getValue()
-                    user = data as Data
-                    Log.d("data", "onDataChange:${user} ")
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (snap in snapshot.children) {
+                    val data = snap.getValue(Data::class.java)
+                    list.add(data!!)
+                    Log.d("data", "onDataChange:${data} ")
                 }
 
-                override fun onCancelled(error: DatabaseError) {
 
-                }
+            }
 
-            })
+            override fun onCancelled(error: DatabaseError) {
 
+            }
 
-
-        databaseReference.addValueEventListener(listener)
+        })
 
 
     }
@@ -85,4 +78,8 @@ class HomeFragment : Fragment(), FileAdapter.OnClickListener {
     override fun onItemClicked() {
         findNavController().navigate(R.id.action_navigation_home_to_openFileFragment)
     }
+
+    var subjectName = ""
 }
+
+

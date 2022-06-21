@@ -182,7 +182,6 @@ class TeacherActivity : AppCompatActivity(), SelectSubjectDialog.OnItemConfirmed
     // Method to show Progress bar
     private fun showProgressDialogWithTitle(substring: String) {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER)
-        //Without this user can hide loader by tapping outside screen
         progressDialog.setCancelable(false)
         progressDialog.setMessage(substring)
         progressDialog.show()

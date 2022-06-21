@@ -19,7 +19,7 @@ class FileAdapter(private val list: ArrayList<Data>,  val listener: OnClickListe
         RecyclerView.ViewHolder(itemBinding.root), View.OnClickListener {
         fun bind(data: Data) = with(itemBinding) {
             ivImage.setImageResource(R.drawable.ic_launcher_background)
-            tvTitle.text = data.title
+            tvTitle.text = data.fileTitle
             tvDescription.text = data.description
         }
         init {

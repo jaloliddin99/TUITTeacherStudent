@@ -24,7 +24,6 @@ import com.tuit.tuit.utils.Constant.currentQuestions
 import com.tuit.tuit.utils.Constant.fragmentQuestions
 import com.tuit.tuit.utils.Constant.mainModel
 import dagger.hilt.android.AndroidEntryPoint
-import vn.beautylife.pagertransformerlibrary.ZoomOutSlideTransformer
 
 @AndroidEntryPoint
 class FragmentTest : Fragment(), DialogWarning.DialogListener {
@@ -95,7 +94,7 @@ class FragmentTest : Fragment(), DialogWarning.DialogListener {
                 requireContext(), fragmentQuestions
             )
             viewPager.adapter = questionsFragmentAdapter
-            viewPager.setPageTransformer(true, ZoomOutSlideTransformer())
+            //viewPager.setPageTransformer(true, ZoomOutSlideTransformer())
             pageIndicator.attachTo(viewPager)
             pageIndicator.swipePrevious()
             pageIndicator.swipeNext()

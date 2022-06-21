@@ -39,7 +39,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -68,16 +68,12 @@ dependencies {
 
     kapt("com.google.dagger:hilt-android-compiler:$dagger_hilt_version")
 
-    //Retrofit with Gson
-    // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-    // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:30.1.0')
 
-    // Declare the dependency for the Firebase Authentication library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
+
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-database-ktx'
     implementation 'com.google.firebase:firebase-storage-ktx'
@@ -101,5 +97,5 @@ dependencies {
 
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     implementation 'com.github.chahine:pageindicator:0.2.8'
-    implementation 'com.github.VuHongKy:ViewPagerTranformer:v1.0'
+    //implementation 'com.github.VuHongKy:ViewPagerTranformer:v1.0'
 }
