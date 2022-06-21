@@ -49,5 +49,6 @@ class SelectSubjectDialog(private val listener: OnItemConfirmed): BottomSheetDia
 
     override fun onItemClicked(name: String) {
         listener.onItemConfirmed(name)
+        dismiss()
     }
 }
