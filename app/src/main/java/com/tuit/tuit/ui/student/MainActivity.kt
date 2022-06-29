@@ -102,6 +102,7 @@ class MainActivity : AppCompatActivity() {
                         hideBottomAppBar()
                     }
 
+
                     R.id.openFileFragment -> {
                         hideBottomAppBar()
                     }

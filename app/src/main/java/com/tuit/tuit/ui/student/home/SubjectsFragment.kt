@@ -27,21 +27,20 @@ class SubjectsFragment : Fragment(), FileAdapter.OnClickListener {
     private var _binding: FragmentSubjectsBinding? = null
     private val binding get() = _binding!!
     lateinit var databaseReference: DatabaseReference
+    private val args : SubjectsFragmentArgs by navArgs()
     private val list = ArrayList<Data>()
     var url: String? = null
-    private var subjectName = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            subjectName = it.getString("name")!!
-        } }
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentSubjectsBinding.inflate(inflater, container, false)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        databaseReference = Firebase.database.reference.child("subjects").child(subjectName)
+        databaseReference = Firebase.database.reference.child("subjects").child(args.title)
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 list.clear()

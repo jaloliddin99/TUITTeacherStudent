@@ -18,16 +18,23 @@ import com.tuit.tuit.repository.model.FirebaseUserData
 import com.tuit.tuit.ui.student.MainActivity
 import com.tuit.tuit.ui.teacher.TeacherActivity
 import com.tuit.tuit.utils.PostValidator
+import com.tuit.tuit.utils.SharedPreferences
+
 class FragmentRegister : Fragment() {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
     private var progressDialog: ProgressDialog? = null
     var firebaseAuth: FirebaseAuth? = null
     var firebaseDatabase: DatabaseReference? = null
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentSignUpBinding.inflate(inflater)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         firebaseAuth = FirebaseAuth.getInstance()
@@ -38,7 +45,14 @@ class FragmentRegister : Fragment() {
                 val textEmail = email.text.toString()
                 val textPassword = password.text.toString()
                 val textReEnteredPassword = reEnteredPassword.text.toString()
-                if (PostValidator.isRegistrationValid(requireContext(), textName, textEmail, textPassword, textReEnteredPassword,)) {
+                if (PostValidator.isRegistrationValid(
+                        requireContext(),
+                        textName,
+                        textEmail,
+                        textPassword,
+                        textReEnteredPassword,
+                    )
+                ) {
                     progressDialog!!.setMessage("Processing...")
                     progressDialog!!.show()
                     registerUser(textEmail, textPassword, textName)
@@ -49,29 +63,51 @@ class FragmentRegister : Fragment() {
                 val action = FragmentRegisterDirections.actionFragmentSignUpToFragmentSignIn()
                 findNavController().navigate(action)
             }
-        } }
+        }
+    }
+
     private fun registerUser(emailM: String, passwordM: String, textName: String) {
-        firebaseAuth!!.createUserWithEmailAndPassword(emailM, passwordM).addOnCompleteListener { task: Task<AuthResult?> ->
+        firebaseAuth!!.createUserWithEmailAndPassword(emailM, passwordM)
+            .addOnCompleteListener { task: Task<AuthResult?> ->
                 progressDialog!!.dismiss()
                 if (task.isSuccessful) {
                     val mUser = firebaseAuth!!.currentUser
                     val userId = mUser!!.uid
-                    firebaseDatabase = FirebaseDatabase.getInstance().reference.child("UserList").child(userId)
+                    firebaseDatabase =
+                        FirebaseDatabase.getInstance().reference.child("UserList").child(userId)
                     firebaseDatabase!!.keepSynced(true)
-                    if (binding.isTeacher.isChecked) { createUserDb(emailM = emailM, name = textName, position = "Teacher")
-                    } else { createUserDb(emailM = emailM, name = textName, position = "Student") }
-                } else { Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show() }
+                    if (binding.isTeacher.isChecked) {
+                        createUserDb(emailM = emailM, name = textName, position = "Teacher")
+                    } else {
+                        createUserDb(emailM = emailM, name = textName, position = "Student")
+                    }
+                } else {
+                    Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+                }
             }
     }
+
     private fun createUserDb(emailM: String, name: String, position: String) {
         firebaseDatabase?.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) { val userDate = FirebaseUserData(name = name, email = emailM, position = position)
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val userDate = FirebaseUserData(name = name, email = emailM, position = position)
                 firebaseDatabase?.setValue(userDate) { _, _ ->
-                    if (position == "Teacher") { val intent = Intent(requireContext(), TeacherActivity::class.java)
+                    if (position == "Teacher") {
+                        val intent = Intent(requireContext(), TeacherActivity::class.java)
                         startActivity(intent)
-                    } else { val intent = Intent(requireContext(), MainActivity::class.java)
-                        startActivity(intent) }} }
-            override fun onCancelled(error: DatabaseError) {} }) }
+                    } else {
+                        val intent = Intent(requireContext(), MainActivity::class.java)
+                        SharedPreferences.setLoggedIn(requireContext(), true)
+                        startActivity(intent)
+
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {}
+        })
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

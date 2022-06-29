@@ -1,6 +1,7 @@
 package com.tuit.tuit.ui.student.profile
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.firebase.auth.FirebaseAuth
 import com.tuit.tuit.databinding.FragmentProfileBinding
+import com.tuit.tuit.ui.login.LoginActivity
 import com.tuit.tuit.utils.SharedPreferences
 
 class ProfileFragment : Fragment() {
@@ -33,9 +36,16 @@ class ProfileFragment : Fragment() {
             textView.text = it
         }
 
-
         binding.ivProfile.setOnClickListener {
             pickImageProfile()
+        }
+
+        binding.logoutTv.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(requireContext(), LoginActivity::class.java)
+            startActivity(intent)
+            SharedPreferences.setLoggedIn(requireContext(), false)
+            requireActivity().finish()
         }
         return root
     }

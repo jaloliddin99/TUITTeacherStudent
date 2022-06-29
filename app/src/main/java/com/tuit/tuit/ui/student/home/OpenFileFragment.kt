@@ -79,9 +79,6 @@ class OpenFileFragment : Fragment() {
             Log.d("@@@", "onViewCreated: $url ")
 
         }
-
-
-
     }
 
 }

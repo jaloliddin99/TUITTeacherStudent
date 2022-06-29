@@ -29,16 +29,27 @@ class HomeFragment : Fragment() {
     lateinit var databaseReference: DatabaseReference
     lateinit var adapter: SubjectAdapter
     private var progressDialog: ProgressDialog? = null
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         progressDialog = ProgressDialog(requireContext())
         adapter = SubjectAdapter(subjectsList())
-        adapter.onClick = { findNavController().navigate(R.id.action_navigation_home_to_subjectsFragment, bundleOf("name" to it)) }
-        binding.rvSubjects.adapter = adapter }
+        binding.rvSubjects.adapter = adapter
+
+        adapter.onClick = {
+            val action = HomeFragmentDirections.actionNavigationHomeToSubjectsFragment(it)
+            findNavController().navigate(action)
+        }
+    }
+
     private fun subjectsList(): ArrayList<String> {
         databaseReference = Firebase.database.reference.child("subjects")
         progressDialog!!.setMessage("Loading...")
@@ -51,14 +62,22 @@ class HomeFragment : Fragment() {
                 for (snap in snapshot.children) {
                     val data = snap.key
                     list.add(data!!)
-                    adapter.notifyDataSetChanged() } }
+                    adapter.notifyDataSetChanged()
+                }
+            }
+
             override fun onCancelled(error: DatabaseError) {
 
-            } })
-        return list }
+            }
+        })
+        return list
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        progressDialog!!.hide()} }
+        progressDialog!!.hide()
+    }
+}
 
 
