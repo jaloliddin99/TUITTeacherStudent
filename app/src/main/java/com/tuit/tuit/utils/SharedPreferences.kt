@@ -7,6 +7,19 @@ import android.net.Uri
 object SharedPreferences {
 
 
+    fun saveImageUrl(context: Context, url: String) {
+        val sharedPreferences = context.getSharedPreferences("Elon", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putString("saveImageUrl", url).apply()
+    }
+
+    fun getImageUrl(context: Context): String? {
+        val sharedPreferences = context.getSharedPreferences("Elon", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("saveImageUrl", "")
+    }
+
+
+
     fun setLoggedIn(context: Context, lang: Boolean) {
         val sharedPreferences = context.getSharedPreferences("Elon", Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
