@@ -18,9 +18,11 @@ class FileAdapter(private val list: ArrayList<Data>,  val listener: OnClickListe
     inner class MyAdapter(private val itemBinding: LayoutFileItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root), View.OnClickListener {
         fun bind(data: Data) = with(itemBinding) {
-            ivImage.setImageResource(R.drawable.ic_launcher_background)
+            ivImage.setImageResource(R.drawable.ic_tuit)
             tvTitle.text = data.fileTitle
             tvDescription.text = data.description
+
+
         }
         init {
             itemView.setOnClickListener(this)

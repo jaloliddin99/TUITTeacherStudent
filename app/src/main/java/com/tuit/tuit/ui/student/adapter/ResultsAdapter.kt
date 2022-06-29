@@ -47,7 +47,7 @@ class ResultsAdapter(var context: Context, private val questionNumberList: List<
         ) {
             holder.isCorrectImage.setImageResource(R.drawable.markasdone)
             holder.togri_javobni_korish.text = "Sizning javobingiz to'g'ri"
-            holder.togri_javobni_korish.setTextColor(Color.GREEN)
+            holder.togri_javobni_korish.setTextColor(Color.parseColor(R.color.base_blue.toString()))
             holder.togri_javobni_korish2.text = "To'g'ri javob " + correctAnswers[position]
             holder.answerA.setTextColor(Color.BLACK)
             holder.answerB.setTextColor(Color.BLACK)
@@ -56,19 +56,19 @@ class ResultsAdapter(var context: Context, private val questionNumberList: List<
             when (correctAnswers[position]) {
                 "A" -> {
                     holder.answerA.isChecked = true
-                    holder.answerA.setTextColor(Color.GREEN)
+                    holder.answerA.setTextColor(Color.parseColor(R.color.base_blue.toString()))
                 }
                 "B" -> {
                     holder.answerB.isChecked = true
-                    holder.answerB.setTextColor(Color.GREEN)
+                    holder.answerB.setTextColor(Color.parseColor(R.color.base_blue.toString()))
                 }
                 "C" -> {
                     holder.answerC.isChecked = true
-                    holder.answerC.setTextColor(Color.GREEN)
+                    holder.answerC.setTextColor(Color.parseColor(R.color.base_blue.toString()))
                 }
                 "D" -> {
                     holder.answerD.isChecked = true
-                    holder.answerD.setTextColor(Color.GREEN)
+                    holder.answerD.setTextColor(Color.parseColor(R.color.base_blue.toString()))
                 }
             }
         } else {

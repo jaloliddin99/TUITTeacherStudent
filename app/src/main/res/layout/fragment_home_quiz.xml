@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.student.quiz.QuizHomeFragment">
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_56dp"
@@ -15,7 +14,6 @@
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
-
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,8 +23,6 @@
             android:textColor="@color/black"
             android:textSize="@dimen/dimen_18sp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
     <FrameLayout
         android:id="@+id/optics"
         android:layout_marginTop="@dimen/dimen_12dp"
@@ -35,14 +31,12 @@
         android:layout_height="wrap_content"
         android:background="@drawable/corner4_dp"
         android:translationZ="@dimen/dimen_8dp">
-
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_wave_card"
             app:tint="@color/base_blue" />
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title"
             android:layout_width="wrap_content"

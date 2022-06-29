@@ -7,7 +7,6 @@ import retrofit2.http.Query
 
 
 interface ApiInterface {
-
     @GET("getAllOptics.php")
     suspend fun getAllOtics(
         @Query("variant") variant: Int,

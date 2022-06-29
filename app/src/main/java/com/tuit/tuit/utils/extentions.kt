@@ -32,7 +32,8 @@ import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.tuit.tuit.R
 
-fun CharSequence?.isValidEmail() = !isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
+fun CharSequence?.isValidEmail() =
+    !isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 fun FragmentActivity.statusBarColor(
@@ -57,7 +58,7 @@ fun FragmentActivity.statusBarColor(
 
 
 fun NavigationView.changeCornerRadius() {
-    val navViewBackground : MaterialShapeDrawable = background as MaterialShapeDrawable
+    val navViewBackground: MaterialShapeDrawable = background as MaterialShapeDrawable
     val radius = resources.getDimension(R.dimen.dimen_16dp)
     navViewBackground.shapeAppearanceModel = navViewBackground.shapeAppearanceModel
         .toBuilder()
@@ -66,8 +67,8 @@ fun NavigationView.changeCornerRadius() {
         .build()
 }
 
-var newCardAdded:Boolean=false
-var firstCardFragmentEntrance:Boolean=true
+var newCardAdded: Boolean = false
+var firstCardFragmentEntrance: Boolean = true
 fun Context.hideKeyboard(view: View) {
     val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
@@ -78,7 +79,7 @@ fun dipToPixels(context: Context, dipValue: Float): Float {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dipValue, metrics)
 }
 
-fun universalToken(context: Context): String{
+fun universalToken(context: Context): String {
     return "Bearer " + SharedPreferences.getToken(context)
 }
 
@@ -91,12 +92,12 @@ fun universalToken(context: Context): String{
 //}
 
 
-fun gotoTelegram(driverTelegram:String, context: Context) {
+fun gotoTelegram(driverTelegram: String, context: Context) {
     try {
         val telegramIntent = Intent(Intent.ACTION_VIEW)
-        val telegram=if (driverTelegram.startsWith("@")){
+        val telegram = if (driverTelegram.startsWith("@")) {
             driverTelegram.replace("@", "")
-        }else{
+        } else {
             driverTelegram
         }
         telegramIntent.data = Uri.parse("https://telegram.me/$telegram")
@@ -106,7 +107,7 @@ fun gotoTelegram(driverTelegram:String, context: Context) {
     }
 }
 
-fun gotoContact(driverPhoneNumber1:String, context: Context) {
+fun gotoContact(driverPhoneNumber1: String, context: Context) {
     try {
         val phone = driverPhoneNumber1
         val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
@@ -171,14 +172,14 @@ fun getNavigationAnimation(): NavOptions {
         .build()
 }
 
-fun putArgs(): NavArgument{
+fun putArgs(): NavArgument {
     return NavArgument.Builder()
         .setType(NavType.StringType)
         .build()
 }
 
 
-fun selectedCard(num:Int): Int {
+fun selectedCard(num: Int): Int {
     return num
 }
 
@@ -218,11 +219,8 @@ fun AppCompatEditText.onRightDrawableClicked(onClicked: (view: AppCompatEditText
 }
 
 
-
-public var xValue:Float=0F
-public var yValue:Float=0F
-
-
+public var xValue: Float = 0F
+public var yValue: Float = 0F
 
 
 fun View.showKeyboard() {
@@ -250,7 +248,11 @@ fun Activity.requestPermissionWithRationale(
             setTitle("Permission")
             setMessage(rationaleStr)
             setPositiveButton("Ok") { _, _ ->
-                ActivityCompat.requestPermissions(this@requestPermissionWithRationale, arrayOf(permission), requestCode)
+                ActivityCompat.requestPermissions(
+                    this@requestPermissionWithRationale,
+                    arrayOf(permission),
+                    requestCode
+                )
             }
             create()
             show()
@@ -277,5 +279,5 @@ fun AppCompatTextView.onRightDrawableClicked(onClicked: (view: AppCompatTextView
     }
 }
 
-const val KEY="intent_key"
+const val KEY = "intent_key"
 

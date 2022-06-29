@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:backgroundTint="?attr/colorOnSecondary"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -18,7 +17,7 @@
         android:layout_width="match_parent"
         app:strokeWidth="2dp"
         app:cardCornerRadius="20dp"
-        app:strokeColor="@color/green"
+        app:strokeColor="@color/base_blue"
         android:layout_height="wrap_content">
 
 
@@ -42,7 +41,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/green"
+                android:background="@color/base_blue"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"/>
 
@@ -64,13 +63,12 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/green"
+                android:background="@color/base_blue"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:textColor="@color/black"
                 android:id="@+id/buttonA"/>
             <RadioButton

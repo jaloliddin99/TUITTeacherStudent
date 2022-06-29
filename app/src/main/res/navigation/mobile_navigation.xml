@@ -4,21 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
-
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.tuit.tuit.ui.student.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_openFileFragment"
-            app:destination="@id/openFileFragment"
+            android:id="@+id/action_navigation_home_to_subjectsFragment"
+            app:destination="@id/subjectsFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
-
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.tuit.tuit.ui.student.quiz.QuizHomeFragment"
@@ -27,11 +25,12 @@
         <action
             android:id="@+id/action_navigation_dashboard_to_fragmentVariants"
             app:destination="@id/fragmentVariants"
+            app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
-            app:enterAnim="@anim/nav_default_enter_anim"/>
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
     </fragment>
-
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.tuit.tuit.ui.student.profile.ProfileFragment"
@@ -76,5 +75,23 @@
         android:id="@+id/openFileFragment"
         android:name="com.tuit.tuit.ui.student.home.OpenFileFragment"
         android:label="fragment_open_file"
-        tools:layout="@layout/fragment_open_file" />
+        tools:layout="@layout/fragment_open_file" >
+        <argument
+            android:name="uri"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectsFragment"
+        android:name="com.tuit.tuit.ui.student.home.SubjectsFragment"
+        android:label="fragment_subjects"
+        tools:layout="@layout/fragment_subjects" >
+        <action
+            android:id="@+id/action_subjectsFragment_to_openFileFragment"
+            app:destination="@id/openFileFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
 </navigation>

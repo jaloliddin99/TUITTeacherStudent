@@ -16,14 +16,13 @@ class FragmentVariants : Fragment(), MainPageAdapter.OnItemClicked{
 
     private var _binding: FragmentVariantsBinding?=null
     private val args: FragmentVariantsArgs by navArgs()
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentVariantsBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -34,7 +33,6 @@ class FragmentVariants : Fragment(), MainPageAdapter.OnItemClicked{
 
         binding.apply {
             title.text = args.name
-
             recyclerView.apply {
                 adapter= MainPageAdapter(this@FragmentVariants)
                 layoutManager= GridLayoutManager(context, 2)

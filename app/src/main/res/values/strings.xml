@@ -128,6 +128,8 @@
     <string name="share">Ulashish</string>
     <string name="compare">Taqqoslash</string>
     <string name="home">Bosh Sahifa</string>
+    <string name="str_signin_success">Signed in successfully</string>
+    <string name="str_signin_failed">Sign in failed</string>
     <string name="enter_your_name">Ismingiz</string>
     <string name="upload">Yuklash</string>
     <string name="correct_answer">To\'g\'ri Javob</string>

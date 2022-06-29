@@ -14,9 +14,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.tuit.tuit.R
 import com.tuit.tuit.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+
+import android.webkit.WebView
+import com.tuit.tuit.R
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -28,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-       setupNavigation()
+        setupNavigation()
     }
 
 
@@ -67,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun setupNavigation(){
+    private fun setupNavigation() {
         val navView: BottomNavigationView = binding.navView
 
         val navHostFragment =
@@ -78,22 +81,29 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             navController.addOnDestinationChangedListener { _, destination, _ ->
                 when (destination.id) {
-                    R.id.fragmentTest->{
+                    R.id.fragmentTest -> {
                         hideBottomAppBar()
                     }
-                    R.id.fragmentVariants->{
+                    R.id.fragmentVariants -> {
                         hideBottomAppBar()
                     }
 
-                    R.id.navigation_home ->{
+                    R.id.navigation_home -> {
                         showBottomNav()
                     }
 
-                    R.id.navigation_dashboard->{
+                    R.id.navigation_dashboard -> {
                         showBottomNav()
                     }
-                    R.id.navigation_notifications->{
+                    R.id.navigation_notifications -> {
                         showBottomNav()
+                    }
+                    R.id.subjectsFragment -> {
+                        hideBottomAppBar()
+                    }
+
+                    R.id.openFileFragment -> {
+                        hideBottomAppBar()
                     }
 
                 }

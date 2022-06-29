@@ -5,12 +5,10 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     android:background="@android:color/transparent">
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialButton"
             android:layout_width="match_parent"
@@ -21,7 +19,6 @@
             android:layout_marginBottom="32dp"
             app:cardCornerRadius="@dimen/dimen_12dp"
             app:cardElevation="@dimen/dimen_12dp">
-
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -39,7 +36,7 @@
                     android:padding="4dp"
                     android:text="Question 13/30"
                     android:textAlignment="center"
-                    android:textColor="@color/green"
+                    android:textColor="@color/base_blue"
                     android:textSize="@dimen/dimen_16sp" />
 
 
@@ -71,7 +68,7 @@
             android:layout_marginBottom="@dimen/dimen_24dp"
             app:cardCornerRadius="@dimen/dimen_12dp"
             app:cardElevation="0dp"
-            app:strokeColor="@color/green"
+            app:strokeColor="@color/base_blue"
             app:strokeWidth="1.5dp">
 
             <RadioGroup
@@ -89,7 +86,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/radio_buttons"
-                    android:buttonTint="@color/color_main_50"
+                    android:buttonTint="@color/base_blue"
                     android:fontFamily="@font/inter_medium"
                     android:textColor="?android:attr/textColorPrimary" />
 
@@ -100,7 +97,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/radio_buttons"
-                    android:buttonTint="@color/color_main_50"
+                    android:buttonTint="@color/base_blue"
                     android:fontFamily="@font/inter_medium"
                     android:textColor="?android:attr/textColorPrimary" />
 
@@ -111,7 +108,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/radio_buttons"
-                    android:buttonTint="@color/color_main_50"
+                    android:buttonTint="@color/base_blue"
                     android:fontFamily="@font/inter_medium"
                     android:textColor="?android:attr/textColorPrimary" />
 
@@ -122,7 +119,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/radio_buttons"
-                    android:buttonTint="@color/color_main_50"
+                    android:buttonTint="@color/base_blue"
                     android:fontFamily="@font/inter_medium"
                     android:textColor="?android:attr/textColorPrimary" />
             </RadioGroup>
