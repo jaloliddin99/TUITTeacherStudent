@@ -19,7 +19,9 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import com.google.firebase.storage.ktx.storage
 import com.squareup.picasso.Picasso
+import com.google.firebase.auth.FirebaseAuth
 import com.tuit.tuit.databinding.FragmentProfileBinding
+import com.tuit.tuit.ui.login.LoginActivity
 import com.tuit.tuit.utils.SharedPreferences
 
 
@@ -59,6 +61,14 @@ class ProfileFragment : Fragment() {
 
         binding.ivProfile.setOnClickListener {
             pickImageProfile()
+        }
+
+        binding.logoutTv.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(requireContext(), LoginActivity::class.java)
+            startActivity(intent)
+            SharedPreferences.setLoggedIn(requireContext(), false)
+            requireActivity().finish()
         }
         return root
     }

@@ -1,17 +1,13 @@
 package com.tuit.tuit.ui.student.exam
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.tuit.tuit.R
 import com.tuit.tuit.databinding.FragmentExamBinding
 import com.tuit.tuit.utils.Constant
 
@@ -32,8 +28,6 @@ class ExamFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         for (i in Constant.chosenAnswers.indices){
             if (Constant.chosenAnswers[i] == Constant.correctAnswers[i]){
                 correctAnswers++
@@ -65,8 +59,6 @@ class ExamFragment : Fragment() {
                 correctAnswers=0
                 incorrectAnswer1=0
                 correctness1=0F
-//                val action=FragmentExamDirections.actionFragmentExamToFragmentResult()
-//                findNavController().navigate(action)
             }
 
             home.setOnClickListener {
@@ -89,8 +81,8 @@ class ExamFragment : Fragment() {
                     Constant.chosenAnswers.clear()
                     Constant.correctAnswers.clear()
                     Constant.currentQuestions.clear()
-                    findNavController().popBackStack(R.id.navigation_home, inclusive = true, false)
-
+                    val action = ExamFragmentDirections.actionExamFragmentToNavigationDashboard()
+                    findNavController().navigate(action)
                 }
             })
 

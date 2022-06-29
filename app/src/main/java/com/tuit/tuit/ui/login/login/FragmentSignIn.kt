@@ -13,6 +13,7 @@ import com.tuit.tuit.databinding.FragmentSignInBinding
 import com.tuit.tuit.ui.login.AuthManager
 import com.tuit.tuit.ui.login.handler.AuthHandler
 import com.tuit.tuit.ui.student.MainActivity
+import com.tuit.tuit.utils.SharedPreferences
 import com.tuit.tuit.utils.toast
 import java.lang.Exception
 
@@ -53,11 +54,11 @@ class FragmentSignIn : Fragment() {
         AuthManager.signIn(email, password, object : AuthHandler {
             override fun onSuccess(uid: String) {
                 toast(requireContext(), getString(R.string.str_signin_success))
+                SharedPreferences.setLoggedIn(requireContext(), true)
                 startActivity(Intent(requireActivity(), MainActivity::class.java))
             }
 
             override fun onError(exception: Exception?) {
-
                 toast(requireContext(), getString(R.string.str_signin_failed))
             }
 

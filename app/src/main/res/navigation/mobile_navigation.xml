@@ -70,7 +70,14 @@
         android:id="@+id/examFragment"
         android:name="com.tuit.tuit.ui.student.exam.ExamFragment"
         android:label="fragment_exam"
-        tools:layout="@layout/fragment_exam" />
+        tools:layout="@layout/fragment_exam" >
+
+        <action
+            android:id="@+id/action_examFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard"
+            app:popUpTo="@id/navigation_dashboard"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/openFileFragment"
         android:name="com.tuit.tuit.ui.student.home.OpenFileFragment"
@@ -92,6 +99,9 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="title"
+            app:argType="string" />
 
     </fragment>
 </navigation>
