@@ -8,8 +8,11 @@ import android.os.CountDownTimer
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import android.widget.Toast
 import com.tuit.tuit.R
 import com.tuit.tuit.ui.student.MainActivity
+import com.tuit.tuit.ui.teacher.TeacherActivity
+import com.tuit.tuit.utils.SharedPreferences
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -25,23 +28,24 @@ class SplashActivity : AppCompatActivity() {
         countDownTimer()
     }
     private fun countDownTimer() {
-        object : CountDownTimer(2000, 1000) {
+        object : CountDownTimer(1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {}
             override fun onFinish() {
-                if (AuthManager.isSignIn()) {
-                    callLoginActivity()
-                } else {
-                    callSignInActivity()
+                val teacher = SharedPreferences.getGetIsTeacher(this@SplashActivity)
+                if (SharedPreferences.isLoggedIn(this@SplashActivity)==true){
+                    if (teacher==true){
+                        Toast.makeText(this@SplashActivity, "dawdwad", Toast.LENGTH_SHORT).show()
+                        forward(TeacherActivity::class.java)
+                    }else if (teacher==false){
+                        forward(MainActivity::class.java)
+                    }
                 }
+
             }
         }.start()
     }
-    private fun callLoginActivity() {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-    }
-    private fun callSignInActivity() {
-        val intent = Intent(this, LoginActivity::class.java)
+    private fun forward(className:Class<*>){
+        val intent = Intent(this,className )
         startActivity(intent)
         finish()
     }

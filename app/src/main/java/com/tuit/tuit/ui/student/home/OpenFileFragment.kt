@@ -68,6 +68,7 @@ class OpenFileFragment : Fragment() {
                     description: String,
                     failingUrl: String
                 ) {
+                    view.loadUrl(url)
                     Toast.makeText(requireContext(), "Error:$description", Toast.LENGTH_SHORT)
                         .show()
                 }

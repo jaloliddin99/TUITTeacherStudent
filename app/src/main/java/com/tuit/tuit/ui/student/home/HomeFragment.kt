@@ -45,8 +45,7 @@ class HomeFragment : Fragment() {
         binding.rvSubjects.adapter = adapter
 
         adapter.onClick = {
-            val action = HomeFragmentDirections.actionNavigationHomeToSubjectsFragment(it)
-            findNavController().navigate(action)
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragment2ToSubjectsFragment(it))
         }
     }
 

@@ -56,7 +56,7 @@ class SubjectsFragment : Fragment(), FileAdapter.OnClickListener {
             } })
         binding.home.setOnClickListener { findNavController().popBackStack() }
     }
-    override fun onItemClicked() {
+    override fun onItemClicked() { // mana shu yerda o'tganku
         findNavController().navigate(R.id.action_subjectsFragment_to_openFileFragment, bundleOf("key" to url)) }
     override fun onDestroyView() {
         super.onDestroyView()

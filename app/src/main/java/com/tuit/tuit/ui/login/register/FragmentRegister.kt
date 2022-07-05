@@ -92,13 +92,17 @@ class FragmentRegister : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val userDate = FirebaseUserData(name = name, email = emailM, position = position)
                 firebaseDatabase?.setValue(userDate) { _, _ ->
+                    SharedPreferences.setLoggedIn(requireContext(), true)
                     if (position == "Teacher") {
+                        SharedPreferences.saveIsTeacher(requireContext(), true)
                         val intent = Intent(requireContext(), TeacherActivity::class.java)
                         startActivity(intent)
+                        requireActivity().finish()
                     } else {
+                        SharedPreferences.saveIsTeacher(requireContext(), false)
                         val intent = Intent(requireContext(), MainActivity::class.java)
-                        SharedPreferences.setLoggedIn(requireContext(), true)
                         startActivity(intent)
+                        requireActivity().finish()
 
                     }
                 }

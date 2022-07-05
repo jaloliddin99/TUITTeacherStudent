@@ -111,13 +111,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_semibold"
-                    android:text="Mirkamol Egamberdiyev" />
+                    android:text="" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/phoneNumberTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+998974697907"
+                    android:text=""
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
